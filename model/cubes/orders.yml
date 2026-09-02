@@ -1,0 +1,58 @@
+---
+cubes:
+- name: orders
+  sql_table: shopify_order_management.public.orders
+  dimensions:
+  - name: notes
+    sql: notes
+    type: string
+    primary_key: false
+  - name: billing_address_id
+    sql: billing_address_id
+    type: string
+    primary_key: true
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: customer_id
+    sql: customer_id
+    type: string
+    primary_key: true
+  - name: order_date
+    sql: order_date
+    type: time
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: payment_id
+    sql: payment_id
+    type: string
+    primary_key: true
+  - name: shipping_address_id
+    sql: shipping_address_id
+    type: string
+    primary_key: true
+  - name: status
+    sql: status
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: total_amount
+    type: sum
+    sql: total_amount
+  - name: discount_amount
+    type: sum
+    sql: discount_amount
+  - name: tax_amount
+    type: sum
+    sql: tax_amount
