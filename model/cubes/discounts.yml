@@ -1,0 +1,61 @@
+---
+cubes:
+- name: discounts
+  sql_table: shopify_order_management.public.discounts
+  dimensions:
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: description
+    sql: description
+    type: string
+    primary_key: false
+  - name: discount_code
+    sql: discount_code
+    type: string
+    primary_key: false
+  - name: discount_id
+    sql: discount_id
+    type: string
+    primary_key: true
+  - name: discount_type
+    sql: discount_type
+    type: string
+    primary_key: false
+  - name: end_date
+    sql: end_date
+    type: time
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: max_uses
+    sql: max_uses
+    type: string
+    primary_key: false
+  - name: start_date
+    sql: start_date
+    type: time
+    primary_key: false
+  - name: used_count
+    sql: used_count
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: discount_value
+    type: sum
+    sql: discount_value
+  - name: min_order_amount
+    type: sum
+    sql: min_order_amount
+  - name: sum_max_uses
+    type: sum
+    sql: max_uses
+  - name: sum_used_count
+    type: sum
+    sql: used_count
