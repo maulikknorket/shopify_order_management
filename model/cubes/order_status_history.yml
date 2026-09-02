@@ -1,0 +1,33 @@
+---
+cubes:
+- name: order_status_history
+  sql_table: shopify_order_management.public.order_status_history
+  dimensions:
+  - name: changed_at
+    sql: changed_at
+    type: time
+    primary_key: false
+  - name: changed_by
+    sql: changed_by
+    type: string
+    primary_key: false
+  - name: history_id
+    sql: history_id
+    type: string
+    primary_key: true
+  - name: notes
+    sql: notes
+    type: string
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: status
+    sql: status
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
