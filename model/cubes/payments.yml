@@ -1,0 +1,44 @@
+---
+cubes:
+- name: payments
+  sql_table: shopify_order_management.public.payments
+  dimensions:
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: payment_date
+    sql: payment_date
+    type: time
+    primary_key: false
+  - name: payment_id
+    sql: payment_id
+    type: string
+    primary_key: true
+  - name: payment_method
+    sql: payment_method
+    type: string
+    primary_key: false
+  - name: status
+    sql: status
+    type: string
+    primary_key: false
+  - name: transaction_reference
+    sql: transaction_reference
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: amount
+    type: sum
+    sql: amount
