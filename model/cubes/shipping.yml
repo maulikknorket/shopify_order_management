@@ -1,0 +1,52 @@
+---
+cubes:
+- name: shipping
+  sql_table: shopify_order_management.public.shipping
+  dimensions:
+  - name: actual_delivery
+    sql: actual_delivery
+    type: time
+    primary_key: false
+  - name: carrier
+    sql: carrier
+    type: string
+    primary_key: false
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: estimated_delivery
+    sql: estimated_delivery
+    type: time
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: shipping_date
+    sql: shipping_date
+    type: time
+    primary_key: false
+  - name: shipping_id
+    sql: shipping_id
+    type: string
+    primary_key: true
+  - name: status
+    sql: status
+    type: string
+    primary_key: false
+  - name: tracking_number
+    sql: tracking_number
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: shipping_cost
+    type: sum
+    sql: shipping_cost
