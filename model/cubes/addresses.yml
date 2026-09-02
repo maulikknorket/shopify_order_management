@@ -1,0 +1,57 @@
+---
+cubes:
+- name: addresses
+  sql_table: shopify_order_management.public.addresses
+  dimensions:
+  - name: address_id
+    sql: address_id
+    type: string
+    primary_key: true
+  - name: address_line1
+    sql: address_line1
+    type: string
+    primary_key: false
+  - name: address_line2
+    sql: address_line2
+    type: string
+    primary_key: false
+  - name: address_type
+    sql: address_type
+    type: string
+    primary_key: false
+  - name: city
+    sql: city
+    type: string
+    primary_key: false
+  - name: country
+    sql: country
+    type: string
+    primary_key: false
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: customer_id
+    sql: customer_id
+    type: string
+    primary_key: true
+  - name: is_default
+    sql: is_default
+    type: boolean
+    primary_key: false
+  - name: postal_code
+    sql: postal_code
+    type: string
+    primary_key: false
+  - name: state
+    sql: state
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:

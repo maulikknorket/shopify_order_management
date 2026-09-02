@@ -1,0 +1,48 @@
+---
+cubes:
+- name: reviews
+  sql_table: shopify_order_management.public.reviews
+  dimensions:
+  - name: comment
+    sql: comment
+    type: string
+    primary_key: false
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: customer_id
+    sql: customer_id
+    type: string
+    primary_key: true
+  - name: is_verified
+    sql: is_verified
+    type: boolean
+    primary_key: false
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  - name: rating
+    sql: rating
+    type: string
+    primary_key: false
+  - name: review_date
+    sql: review_date
+    type: time
+    primary_key: false
+  - name: review_id
+    sql: review_id
+    type: string
+    primary_key: true
+  - name: title
+    sql: title
+    type: string
+    primary_key: false
+  measures:
+  - name: sum_rating
+    type: sum
+    sql: rating
+  - name: row_count
+    type: count
+    sql:

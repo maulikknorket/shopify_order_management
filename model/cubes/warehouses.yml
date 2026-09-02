@@ -1,0 +1,49 @@
+---
+cubes:
+- name: warehouses
+  sql_table: shopify_order_management.public.warehouses
+  dimensions:
+  - name: address
+    sql: address
+    type: string
+    primary_key: false
+  - name: city
+    sql: city
+    type: string
+    primary_key: false
+  - name: country
+    sql: country
+    type: string
+    primary_key: false
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: phone
+    sql: phone
+    type: string
+    primary_key: false
+  - name: state
+    sql: state
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  - name: warehouse_id
+    sql: warehouse_id
+    type: string
+    primary_key: true
+  - name: warehouse_name
+    sql: warehouse_name
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:

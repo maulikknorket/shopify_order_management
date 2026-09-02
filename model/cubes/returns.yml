@@ -1,0 +1,47 @@
+---
+cubes:
+- name: returns
+  sql_table: shopify_order_management.public.returns
+  dimensions:
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  - name: reason
+    sql: reason
+    type: string
+    primary_key: false
+  - name: return_date
+    sql: return_date
+    type: time
+    primary_key: false
+  - name: return_id
+    sql: return_id
+    type: string
+    primary_key: true
+  - name: status
+    sql: status
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  measures:
+  - name: quantity
+    type: sum
+    sql: quantity
+  - name: row_count
+    type: count
+    sql:
+  - name: refund_amount
+    type: sum
+    sql: refund_amount
