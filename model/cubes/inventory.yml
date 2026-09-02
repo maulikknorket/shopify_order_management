@@ -1,0 +1,42 @@
+---
+cubes:
+- name: inventory
+  sql_table: shopify_order_management.public.inventory
+  dimensions:
+  - name: inventory_id
+    sql: inventory_id
+    type: string
+    primary_key: true
+  - name: last_restocked_at
+    sql: last_restocked_at
+    type: time
+    primary_key: false
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  - name: reorder_level
+    sql: reorder_level
+    type: string
+    primary_key: false
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  - name: warehouse_id
+    sql: warehouse_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: quantity
+    type: sum
+    sql: quantity
+  - name: reserved_quantity
+    type: sum
+    sql: reserved_quantity
+  - name: sum_reorder_level
+    type: sum
+    sql: reorder_level
