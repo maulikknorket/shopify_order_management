@@ -1,0 +1,41 @@
+---
+cubes:
+- name: order_items
+  sql_table: shopify_order_management.public.order_items
+  dimensions:
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: discount
+    sql: discount
+    type: string
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: order_item_id
+    sql: order_item_id
+    type: string
+    primary_key: true
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: quantity
+    type: sum
+    sql: quantity
+  - name: unit_price
+    type: sum
+    sql: unit_price
+  - name: sum_discount
+    type: sum
+    sql: discount
+  - name: total_price
+    type: sum
+    sql: total_price
