@@ -1,0 +1,58 @@
+---
+cubes:
+- name: products
+  sql_table: shopify_order_management.public.products
+  dimensions:
+  - name: category_id
+    sql: category_id
+    type: string
+    primary_key: true
+  - name: created_at
+    sql: created_at
+    type: time
+    primary_key: false
+  - name: description
+    sql: description
+    type: string
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  - name: product_name
+    sql: product_name
+    type: string
+    primary_key: false
+  - name: sku
+    sql: sku
+    type: string
+    primary_key: false
+  - name: supplier_id
+    sql: supplier_id
+    type: string
+    primary_key: true
+  - name: updated_at
+    sql: updated_at
+    type: time
+    primary_key: false
+  - name: weight
+    sql: weight
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: price
+    type: sum
+    sql: price
+  - name: cost_price
+    type: sum
+    sql: cost_price
+  - name: sum_weight
+    type: sum
+    sql: weight
